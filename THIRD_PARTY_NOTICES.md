@@ -19,9 +19,13 @@ The extracted executable SHA256 is:
 
 `30CF41C2BAC4707754B4D7FAAB96743A16957BDB21ECEE82E64FD941905185D9  featureCounts.exe`
 
-## Source Availability
+## Corresponding Source
 
-The corresponding Subread 2.1.1 source package is available from SourceForge:
+The corresponding Subread 2.1.1 source is included in this repository under:
+
+`subread-2.1.1-source/`
+
+The original source package is also available from SourceForge:
 
 https://sourceforge.net/projects/subread/files/subread-2.1.1/subread-2.1.1-source.tar.gz/download
 

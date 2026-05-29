@@ -1,4 +1,4 @@
-# featureCounts Unofficial Windows EXE
+# featureCounts Unofficial Windows Executable
 
 This repository publishes a small Windows x64 package containing only
 `featureCounts.exe`, extracted unmodified from the official Windows x86_64
@@ -13,6 +13,7 @@ Official featureCounts site: https://subread.sourceforge.net/featureCounts.html
 
 - featureCounts: 2.1.1
 - Source package: subread-2.1.1-Windows-x86_64.zip
+- Corresponding source: `subread-2.1.1-source/` in this repository
 - Target platform: Windows x64
 
 ## Usage
@@ -36,4 +37,5 @@ not included in this release archive.
 featureCounts is part of the Subread package and is distributed under the GNU
 General Public License version 3. See `LICENSE.md`.
 
-See `THIRD_PARTY_NOTICES.md` for package provenance and source availability.
+The corresponding Subread 2.1.1 source is included in this repository under
+`subread-2.1.1-source/`. See `THIRD_PARTY_NOTICES.md` for package provenance.
