@@ -16,21 +16,51 @@ Official featureCounts site: https://subread.sourceforge.net/featureCounts.html
 - Corresponding source: `subread-2.1.1-source/` in this repository
 - Target platform: Windows x64
 
-## Usage
+## Installation
 
-Download the release ZIP from:
+The recommended installation method is the MSI installer.
+
+Download the MSI from the release page:
 
 https://github.com/win-ngs/featurecounts-windows-exe/releases/tag/v2.1.1-windows-x86_64
 
-Extract it, and run:
+Double-click the `.msi` file and follow the installer. The installer places
+`featureCounts.exe` under `C:\Program Files\WinNGS-featureCounts` and adds that
+directory to the system PATH.
+
+<table>
+  <tr>
+    <td>
+      <strong>Windows SmartScreen note</strong><br>
+      If Windows shows a blue warning screen titled "Windows protected your PC",
+      click the <strong>"More info"</strong> link, then click the
+      <strong>"Run anyway"</strong> button to continue the installation.
+    </td>
+  </tr>
+</table>
+
+After installation, open a new PowerShell window and run:
+
+```powershell
+featureCounts -v
+```
+
+## ZIP Archive
+
+If the MSI installer cannot be used, or if you prefer not to install the tool,
+download the ZIP archive from the same release page:
+
+https://github.com/win-ngs/featurecounts-windows-exe/releases/tag/v2.1.1-windows-x86_64
+
+Extract it, open PowerShell in the extracted directory, and run:
 
 ```powershell
 .\featureCounts.exe -v
 ```
 
-This archive intentionally includes only `featureCounts.exe`. Other programs,
+The ZIP archive intentionally includes only `featureCounts.exe`. Other programs,
 annotations, tests, documentation, and source files from the Subread package are
-not included in this release archive.
+not included.
 
 ## License
 
