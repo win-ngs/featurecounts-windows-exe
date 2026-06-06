@@ -1,0 +1,47 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package Name="WinNGS featureCounts"
+           Manufacturer="WinNGS"
+           Version="$(var.ProductVersion)"
+           UpgradeCode="{2CBF46A9-8F07-46B4-86D1-9EB49DF28727}"
+           Scope="perMachine">
+    <MajorUpgrade DowngradeErrorMessage="A newer version of WinNGS featureCounts is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+    <ui:WixUI Id="WixUI_Minimal" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.InstallerLicenseRtf)" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="Installation completed successfully." />
+
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="WinNGS-featureCounts" />
+    </StandardDirectory>
+
+    <Feature Id="MainFeature" Title="WinNGS featureCounts" Level="1">
+      <ComponentGroupRef Id="FeatureCountsFiles" />
+      <ComponentGroupRef Id="PathComponents" />
+    </Feature>
+  </Package>
+
+  <Fragment>
+    <ComponentGroup Id="FeatureCountsFiles" Directory="INSTALLFOLDER">
+      <Files Include="$(var.MsiRoot)\WinNGS-featureCounts\**" />
+    </ComponentGroup>
+
+    <ComponentGroup Id="PathComponents" Directory="INSTALLFOLDER">
+      <Component Id="AddWinNgsFeatureCountsToPath" Guid="{60BECD4F-20E0-47EC-B325-886B177FF1EE}">
+        <CreateFolder />
+        <RegistryValue Root="HKLM"
+                       Key="Software\WinNGS\featureCounts"
+                       Name="PathComponent"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+        <Environment Id="AddWinNgsFeatureCountsToPath"
+                     Name="PATH"
+                     Value="[INSTALLFOLDER]"
+                     Action="set"
+                     Part="last"
+                     System="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
